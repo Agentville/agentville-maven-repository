@@ -4,7 +4,7 @@ agentville-maven-repository
 Dies ist Agentvilles eigenes kleines Maven-Repository. Für die hier verwendeten Bibliotheken und vielleicht auch für das eine oder andere selbst entwickelte Artefakt. Es gibt einen Blogbeitrag dazu von mir (bald jedenfalls...), aber alle notwendigen Informationen, um dieses Repository zu benutzen, finden sich auch hier.
 
 Die Artefakte sind von mir selbstgemacht, und zwar in Handarbeit:
-* Für das Binary habe ich das Original aus dem Download genommen, entsprechend der Maven-Konvention umbenannt und einzelne Dateien aus dem Hauptverzeichnis des Original-Projektes (Lizenz, Readme, Changelog, ...) hinzugefügt.
+* Für das Binary habe ich das Original aus dem Download genommen, entsprechend der Maven-Konvention (um-)benannt und einzelne Dateien aus dem Hauptverzeichnis des Original-Projektes (Lizenz, Readme, Changelog, ...) hinzugefügt.
 * Das Source-Artefakt ist der Inhalt des src-Verzeichnisses aus dem Original-Projekt. Hier habe ich ebenfalls die Dateien aus dem Hauptverzeichnis (s.o.) hinzugefügt.
 * Das Javadoc-Artefakt ist der Inhalt des api-Verzeichnisses.
 * Die POM-Datei ist selbstgemacht, die Informationen dafür habe ich aus den build-Skripten der Projekte.
@@ -16,11 +16,13 @@ Diese ganzen Archive habe ich dann lokal *deployt*, und zwar in das Git-Projekt,
     -DpomFile=pom.xml -Dsources=jade-4.3.2-sources.zip -Djavadoc=jade-4.3.2-javadoc.zip 
     -DcreateChecksum=true -Durl=file:///D:/Git-Projekte/agentville-maven-repository
 
-Dabei hat Maven die Source- und die Javadoc-Artefakte von .zip in .jar umgebaut und die Metadata- und Hash-Dateien erzeugt. Naja, und dann halt noch *commmit* und *sync*. Klar.
+Dabei hat Maven die Source- und die Javadoc-Artefakte von .zip in .jar umgebaut und die Metadata- und Hash-Dateien erzeugt. Naja, und dann halt noch *commmit* und *sync*, klar.
 
-Ich hab natürlich eigentlich auch besseres zu tun, als Maven-Artefakte für anderer Leute Ant-Projekte zu bauen. Aber auf der anderen Seite möchte ich JADE mit Maven verwenden und dabei nicht auf bequemen Zugriff auf Sourcecode und API-Dokumentation verzichten. Trotzdem ist das hier nur eine Notlösung, die vielleicht auch nicht für alle Zeiten zur Verfügung steht!
+Ich hab natürlich eigentlich auch besseres zu tun, als Maven-Artefakte für anderer Leute Ant-Projekte zu bauen. Aber auf der anderen Seite möchte ich JADE mit Maven verwenden und dabei nicht auf bequemen Zugriff auf Sourcecode und API-Dokumentation verzichten. Trotzdem ist das hier nur eine Notlösung, die vielleicht auch nicht für alle Zeiten zur Verfügung steht.
 
-Um dieses Repository zu benutzen, muss es erstmal im POM aufgenommen werden. Und zwar so:
+Um das nochmal deutlich zu schreiben: die Artefakte, die nicht aus meinen eigenen Projekten stammen, sind alle ein bisschen improvisiert, die Bereitstellung erfolgt ohne Gewähr und die Benutzung also auf eigenes Risiko. Wenn es mit einem Artefakt hier Probleme gibt, freue ich mich aber über einen entsprechenden Hinweis.
+
+Um dieses Repository (trotzdem) zu benutzen, muss es erstmal im POM aufgenommen werden. Und zwar so:
 
     <project ...>
       ...
